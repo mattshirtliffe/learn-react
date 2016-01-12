@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5 target">
+
+      </div>
+    </div>
+
+  </div>
+
+    </body>
+    <script type="text/babel">
+
+      // form and function of a component
+      var Badge = React.createClass({
+          render: function(){
+            return <button className="btn btn-primary" type="button">
+            {this.props.message} <span className="badge">{this.props.number}</span>
+            </button>
+          }
+      });
+
+
+      var Thumbnail = React.createClass({
+          render: function(){
+            return <div className="thumbnail">
+              <img src={this.props.image} alt={this.props.alt}/>
+              <div className="caption">
+                <h3>{this.props.title}</h3>
+                <p>{this.props.description}</p>
+                <p>
+                <a href="#" className="btn btn-primary" role="button">Button</a>
+                <a href="#" className="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          }
+      });
+
+
+
+
+
+      var options = {message:"inbox",number:42,image:"http://i.imgur.com/EvPTPuj.jpg",title:"Vegan Birthday Cake",description:"Vegan, low carb, low fat, no gluten birthday cake!"}
+      // instantiate
+      var element = React.createElement(Thumbnail,options);
+
+
+      // place in dom
+      ReactDOM.render (element,document.querySelector('.target'));
+    </script>
+
+</html>
