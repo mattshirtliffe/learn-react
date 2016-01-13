@@ -59,11 +59,41 @@
 
 
 
+      var ThumbnailList	 = React.createClass({
+        render: function(){
+          var list = this.props.thumbnailData.map(function(thumbnailProps){
+            // ... all
+              return <Thumbnail {...thumbnailProps} />
+          });
+
+          return <div>
+            {list}
+           </div>
+        }
+      });
 
 
-      var options = {message:"inbox",number:42,image:"http://i.imgur.com/EvPTPuj.jpg",title:"Vegan Birthday Cake",description:"Vegan, low carb, low fat, no gluten birthday cake!"}
+
+
+
+
+      var options = {
+        thumbnailData:[
+        {message:"inbox",
+        number:42,
+        image:"http://i.imgur.com/EvPTPuj.jpg",
+        title:"Vegan Birthday Cake",
+        description:"Vegan, low carb, low fat, no gluten birthday cake!"
+        },
+        {message:"inbox",
+        number:42,
+        image:"http://i.imgur.com/EvPTPuj.jpg",
+        title:"Vegan Birthday Cake",
+        description:"Vegan, low carb, low fat, no gluten birthday cake!"
+        }]
+      }
       // instantiate
-      var element = React.createElement(Thumbnail,options);
+      var element = React.createElement(ThumbnailList,options);
 
 
       // place in dom
