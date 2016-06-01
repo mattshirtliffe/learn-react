@@ -2,24 +2,34 @@ var React = require('react')
 var ReactDOM = require('react-dom')
 var ThumbnailList = require('./thumbnail-list')
 
-var options = {
-  thumbnailData:[
-  {message:"inbox",
-  number:42,
-  image:"http://i.imgur.com/EvPTPuj.jpg",
-  title:"Vegan Birthday Cake",
-  description:"Vegan, low carb, low fat, no gluten birthday cake!"
+
+var options = {thumbnailData:[
+  {
+    title:"See tutorials",
+    number: 42,
+    header:"Learn React",
+    description:" React for the win",
+    imageUrl: "https://facebook.github.io/react/img/logo.svg"
   },
-  {message:"inbox",
-  number:42,
-  image:"http://i.imgur.com/EvPTPuj.jpg",
-  title:"Vegan Birthday Cake",
-  description:"Vegan, low carb, low fat, no gluten birthday cake!"
-  }]
-}
-// instantiate
+  {
+    title:"See tutorials",
+    number: 42,
+    header:"Learn React",
+    description:" React for the win",
+    imageUrl: "https://facebook.github.io/react/img/logo.svg"
+  },
+  {
+    title:"See tutorials",
+    number: 42,
+    header:"Learn React",
+    description:" React for the win",
+    imageUrl: "https://facebook.github.io/react/img/logo.svg"
+  }
+]};
+
+// render react class
 var element = React.createElement(ThumbnailList,options);
 
-
-// place in dom
-ReactDOM.render (element,document.querySelector('.target'));
+// where to place the element in dom
+// put into page
+ReactDOM.render(element, document.querySelector('.container'));
